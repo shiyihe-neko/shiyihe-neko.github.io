@@ -1,7 +1,7 @@
 # main links links
 main:
-  - title: "Publications"
-    url: https://scholar.google.com/citations?user=3285IsEAAAAJ&hl=en
+  # - title: "Publications"
+  #   url: https://scholar.google.com/citations?user=3285IsEAAAAJ&hl=en
 
   # - title: "Talks"
     # url: /talks/
@@ -16,7 +16,7 @@ main:
     # url: /year-archive/
 
   - title: "CV"
-    url: /files/szoro_cv.pdf
+    url: /files/ShiyiHe-cv.pdf
 
   # - title: "Guide"
     # url: /markdown/
