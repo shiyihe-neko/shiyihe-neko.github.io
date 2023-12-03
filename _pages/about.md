@@ -12,15 +12,12 @@ I am broadly interested in various data management and human-computer interactio
 Feel free to contact me via email: shiyi.he@utah.edu.
 
 
+
 Education
 ======
-University of Wisconsin-Madison 
+**University of Wisconsin-Madison**  
+M.S. in Information (2023)  
+Advisor: [Prof. Ian Hutchins](https://ischool.wisc.edu/staff/hutchins-b-ian/).
 
-M.S. in Information (2023)
-
-Advisor:[Prof. Ian Hutchins](https://ischool.wisc.edu/staff/hutchins-b-ian/).
-
-East China Normal University
-
+**East China Normal University**  
 B.S. in Information Management and System (2021)
-
