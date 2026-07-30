@@ -7,7 +7,8 @@
     <meta name="theme-color" content="#151714">
     <title>Shiyi He</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css?v=top-align-3">
 </head>
 <body>
     <aside class="sidebar">
@@ -26,7 +27,8 @@
             <a class="active" href="#home" data-view-link="home">Home</a>
             <a href="#publications" data-view-link="publications">Publications</a>
             <a href="#experiences" data-view-link="experiences">Experiences</a>
-            <a href="#news" data-view-link="news">Beyond Research</a>
+            <!-- Beyond Research is temporarily hidden until its content is ready. -->
+            <!-- <a href="#news" data-view-link="news">Beyond Research</a> -->
         </nav>
 
         <div class="sidebar-meta">
@@ -67,7 +69,7 @@
                     </div>
                 </div>
                 <div class="bio">
-                    <p>I’m a fourth-year PhD student advised by <a href="https://www.mcnutt.in/" target="_blank" rel="noopener noreferrer">Andrew McNutt</a>.</p>
+                    <p>I’m a 4th-year PhD student advised by <a href="https://www.mcnutt.in/" target="_blank" rel="noopener noreferrer">Andrew McNutt</a>.</p>
                     <p>My research lies at the intersection of human–computer interaction, data visualization, and programming interfaces. I study how the design of data tools shapes the ways people understand, transform, and reason about data, with the goal of making complex data work more transparent, expressive, and approachable.</p>
                     <p>I earned a BS in Information Management and Systems from East China Normal University and an MS in Information Science from the University of Wisconsin–Madison.</p>
                 </div>
@@ -193,33 +195,66 @@
                     <span>01</span>
                     <div class="experience-content">
                         <h3>Internships</h3>
-                        <p class="experience-meta">Organization · Role · Year</p>
-                        <p class="experience-description">Add a short description of your internship, the team you worked with, and the project or research you contributed to.</p>
+                        <p class="experience-meta">Lexical Intelligence · Data Scientist Intern · 2022</p>
+                        <p class="experience-description"></p>
+                        <p class="experience-meta">Ermenegildo Zegna · Data Analytics Intern · 2019</p>
+                        <p class="experience-description"></p>
                     </div>
                 </article>
                 <article>
                     <span>02</span>
                     <div class="experience-content">
-                        <h3>Services</h3>
-                        <p class="experience-meta">Conference · Community · Year</p>
-                        <p class="experience-description">Add reviewing, organizing, mentoring, volunteering, or other contributions to your research community.</p>
+                        <h3>TAships</h3>
+                        <p class="experience-meta">CS 6635 Vis for Scientific Data · University of Utah · Spring 2026</p>
+                        <p class="experience-description"></p>
+                        <p class="experience-meta">COMP 1010 Programming for All · University of Utah · Fall 2025</p>
+                        <p class="experience-description"></p>
                     </div>
                 </article>
                 <article>
                     <span>03</span>
                     <div class="experience-content">
-                        <h3>Awards</h3>
-                        <p class="experience-meta">Award name · Institution · Year</p>
-                        <p class="experience-description">Add the name of the award, why it was given, and one sentence of helpful context.</p>
+                        <h3>External Reviewing</h3>
+                        <p class="experience-meta">The Web Conference (TheWebConf) · 2023</p>
+                        <p class="experience-description"></p>
+                    </div>
+                </article>
+                <article>
+                    <span>04</span>
+                    <div class="experience-content">
+                        <h3>Services</h3>
+                        <p class="experience-meta">Treasurer. Grad-CS Women at University of Utah · 2024</p>
+                        <p class="experience-description"></p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="news" class="view view-life" aria-labelledby="news-title" data-title="Beyond Research">
+        <!-- Remove the hidden attribute below when Beyond Research is ready to publish. -->
+        <section id="news" class="view view-life" aria-labelledby="news-title" data-title="Beyond Research" hidden>
             <div class="page-head compact">
                 <h2 id="news-title">Beyond Research.</h2>
-                <p>Music, travel, photography, baking—and a soft spot for Momonga.</p>
+            </div>
+            <div class="beyond-intro">
+                <p class="beyond-lead">A life outside the lab, collected through places, movement, food, and music.</p>
+                <div class="beyond-topics">
+                    <article>
+                        <h3>Footprints</h3>
+                        <p>I love traveling and documenting the places I visit through photography. Each journey gives me a chance to encounter new landscapes, cultures, and perspectives.</p>
+                    </article>
+                    <article>
+                        <h3>On the Move</h3>
+                        <p>When I am not working, you can often find me skiing or playing tennis. I enjoy both the thrill of the slopes and the rhythm of a good rally.</p>
+                    </article>
+                    <article>
+                        <h3>Baking</h3>
+                        <p>I enjoy baking and experimenting with new recipes—especially when there are friends around to share the results.</p>
+                    </article>
+                    <article>
+                        <h3>Music &amp; More</h3>
+                        <p>Music is a constant part of my life, whether I am working, traveling, or relaxing. I also have a very soft spot for Momonga.</p>
+                    </article>
+                </div>
             </div>
             <div class="story-wall">
                 <article class="story-tile story-tile-featured is-placeholder">
@@ -268,33 +303,60 @@
                         <h3 id="kyoto-note-title">A few quiet days in Kyoto</h3>
                         <time datetime="2026-10">October 2026 · Placeholder entry</time>
                     </header>
-                    <figure class="note-hero">
-                        <img src="profile1.jpg" alt="Placeholder travel photograph">
-                        <figcaption>A slow afternoon, somewhere between one plan and the next.</figcaption>
-                    </figure>
+                    <section class="travel-map-section" aria-labelledby="travel-map-title">
+                        <div class="map-heading">
+                            <div>
+                                <p>Trip map</p>
+                                <h4 id="travel-map-title">Three stops, one small notebook.</h4>
+                            </div>
+                            <p>Select a place to jump to its story.</p>
+                        </div>
+                        <div id="travel-map" class="travel-map" aria-label="Interactive map showing Kyoto, Tokyo, and Nara"></div>
+                        <nav class="place-jump" aria-label="Places in this travel note">
+                            <button type="button" data-place="kyoto" data-lat="35.0116" data-lng="135.7681" data-target="place-kyoto"><span>01</span> Kyoto</button>
+                            <button type="button" data-place="tokyo" data-lat="35.6762" data-lng="139.6503" data-target="place-tokyo"><span>02</span> Tokyo</button>
+                            <button type="button" data-place="nara" data-lat="34.6851" data-lng="135.8048" data-target="place-nara"><span>03</span> Nara</button>
+                        </nav>
+                    </section>
                     <div class="note-intro">
                         <p class="note-drop">This is a placeholder for a small travel story: where I went, what surprised me, and the details I wanted to keep after coming home.</p>
                         <p>I imagine this note holding a loose itinerary, a favorite café, an accidental detour, and the kind of observation that never quite belongs in a formal update.</p>
                     </div>
-                    <div class="note-gallery">
-                        <figure>
-                            <img src="profile2.jpg" alt="Second placeholder travel photograph">
-                            <figcaption>01 — A place worth returning to.</figcaption>
-                        </figure>
-                        <div class="note-aside">
-                            <p>“Leave room for the unplanned part.”</p>
-                            <span>Draft note to myself</span>
-                        </div>
-                        <figure>
-                            <img src="cake2.jpg" alt="Placeholder detail photograph">
-                            <figcaption>02 — Something sweet at the end of the day.</figcaption>
-                        </figure>
+                    <div class="place-stories">
+                        <article id="place-kyoto" class="place-story" data-place-story="kyoto">
+                            <div class="place-number">01</div>
+                            <div class="place-copy">
+                                <p>Kyoto · Placeholder</p>
+                                <h4>Warm light and an unhurried morning</h4>
+                                <p>I started without a strict plan and followed quieter streets away from the busiest paths. This paragraph can become a memory, a recommendation, or a short diary entry.</p>
+                            </div>
+                            <figure><img src="profile1.jpg" alt="Placeholder photograph for Kyoto"><figcaption>Morning near an old temple.</figcaption></figure>
+                        </article>
+                        <article id="place-tokyo" class="place-story" data-place-story="tokyo">
+                            <div class="place-number">02</div>
+                            <div class="place-copy">
+                                <p>Tokyo · Placeholder</p>
+                                <h4>Between bright crossings and small cafés</h4>
+                                <p>A place for notes about the city’s rhythm: what I saw, where I paused, and the tiny discoveries that made a crowded day feel personal.</p>
+                            </div>
+                            <figure><img src="profile2.jpg" alt="Placeholder photograph for Tokyo"><figcaption>A favorite corner, saved for later.</figcaption></figure>
+                        </article>
+                        <article id="place-nara" class="place-story" data-place-story="nara">
+                            <div class="place-number">03</div>
+                            <div class="place-copy">
+                                <p>Nara · Placeholder</p>
+                                <h4>A slower final stop</h4>
+                                <p>This final section can hold a half-day trip, a photograph with a story behind it, and one practical detail you would tell a friend before they visit.</p>
+                            </div>
+                            <figure><img src="cake2.jpg" alt="Placeholder detail photograph for Nara"><figcaption>Something sweet at the end of the day.</figcaption></figure>
+                        </article>
                     </div>
                     <footer>Photos and words are placeholders for your future story.</footer>
                 </article>
             </dialog>
         </section>
     </main>
-    <script src="script.js?v=beyond-research"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js?v=travel-map"></script>
 </body>
 </html>
