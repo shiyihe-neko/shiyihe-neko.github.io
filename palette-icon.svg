@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="225" viewBox="0 0 300 225" role="img" aria-labelledby="title">
+  <title id="title">Color palette</title>
+  <rect width="300" height="225" fill="#e9e7dc"/>
+  <path d="M151 37c-61 0-109 36-109 82 0 44 41 72 85 72 18 0 27-9 27-21 0-10-9-15-9-24 0-9 8-15 18-15h24c37 0 67-13 67-38 0-31-46-56-103-56Z" fill="#faf8ef" stroke="#293e35" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="89" cy="103" r="16" fill="#d6764f"/>
+  <circle cx="126" cy="70" r="16" fill="#caa34c"/>
+  <circle cx="175" cy="69" r="16" fill="#486a62"/>
+  <circle cx="216" cy="94" r="16" fill="#8e83aa"/>
+  <circle cx="89" cy="151" r="16" fill="#a7b8c0"/>
+  <ellipse cx="123" cy="157" rx="10" ry="11" transform="rotate(-32 123 157)" fill="#e9e7dc" stroke="#293e35" stroke-width="5"/>
+</svg>

@@ -807,5 +807,6 @@ main {
 /* Publication figures and links use the same compact research-list layout. */
 .publication-image-system { display: flex; align-items: center; background: #fff; border: 1px solid #ded9cf; }
 .publication-image-system img { height: auto; object-fit: contain; filter: none; }
-.publication-case-link { display: inline-block; margin-top: 14px; color: #47543d; font-size: 13px; line-height: 1.6; text-underline-offset: 4px; }
-.publication-case-link:hover { color: #151714; }
+
+.publication-image-icon { background: #e9e7dc; }
+.publication-image-icon img { object-fit: contain; filter: none; }
