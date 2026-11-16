@@ -56,7 +56,7 @@ body:has(.album-window[open]){overflow:hidden}
 .album-message:not(:empty){padding-top:12px;padding-bottom:5px}
 .album-undo{padding:0;border:0;border-bottom:1px solid #b8a6c4;background:none;color:#715883;font-size:inherit;margin-left:8px}
 .album-body{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;padding:22px 26px 27px;overscroll-behavior:contain}
-.album-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:start;min-height:0}
+.album-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px;row-gap:0;grid-auto-rows:1px;grid-auto-flow:row dense;align-items:start;min-height:0}
 .album-photo{position:relative;min-width:0;margin:0;padding:5px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.8);border-radius:8px;box-shadow:0 2px 8px rgba(74,54,89,.035)}
 .photo-open{display:block;width:100%;padding:0;border:0;background:none;border-radius:4px;overflow:hidden;cursor:zoom-in}
 .photo-open img{display:block;width:100%;height:auto}
@@ -74,7 +74,7 @@ body:has(.album-window[open]){overflow:hidden}
 .viewer-prev,.viewer-next{flex:none;border:1px solid rgba(201,188,211,.8);border-radius:50%;background:rgba(255,255,255,.55);color:#9c89aa;width:35px;height:35px;padding:0;font-size:26px;font-weight:300;line-height:1}
 .viewer-prev:disabled,.viewer-next:disabled{opacity:.25}
 @media(max-width:1000px){.folder-collection{gap:22px}.folder-name{font-size:23px}.interest-folders{grid-template-columns:repeat(2,minmax(0,1fr))}.interest-folders .folder-name{font-size:23px}}
-@media(max-width:760px){.personal-intro h1{font-size:40px}.personal-cat{width:65px;height:65px;margin-right:5px}.personal-index{margin-bottom:28px}.archive-section h2{font-size:24px}.trip-folders{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-folder{height:195px}.folder-front{padding:18px;top:62px}.folder-name{font-size:21px}.folder-mark{right:17px;top:15px}.folder-collection{gap:17px}.interest-folders .folder-name{font-size:18px}.album-window{width:calc(100vw - 24px);height:calc(100dvh - 34px);border-radius:15px}.album-header{padding:20px 18px 16px;gap:13px}.album-header h2{font-size:24px}.album-actions{gap:9px}.album-add{font-size:12px;padding:9px 11px;gap:7px}.album-body{padding:17px 16px}.album-message{padding-left:18px;padding-right:18px}.album-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.album-photo{margin:0}.photo-remove{opacity:1;width:23px;height:23px;font-size:20px}.album-empty{min-height:370px}.viewer-stage{gap:7px}.viewer-prev,.viewer-next{width:28px;height:28px;font-size:23px}.viewer-image{max-width:calc(100% - 70px)}}
+@media(max-width:760px){.personal-intro h1{font-size:40px}.personal-cat{width:65px;height:65px;margin-right:5px}.personal-index{margin-bottom:28px}.archive-section h2{font-size:24px}.trip-folders{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-folder{height:195px}.folder-front{padding:18px;top:62px}.folder-name{font-size:21px}.folder-mark{right:17px;top:15px}.folder-collection{gap:17px}.interest-folders .folder-name{font-size:18px}.album-window{width:calc(100vw - 24px);height:calc(100dvh - 34px);border-radius:15px}.album-header{padding:20px 18px 16px;gap:13px}.album-header h2{font-size:24px}.album-actions{gap:9px}.album-add{font-size:12px;padding:9px 11px;gap:7px}.album-body{padding:17px 16px}.album-message{padding-left:18px;padding-right:18px}.album-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px;row-gap:0}.album-photo{margin:0}.photo-remove{opacity:1;width:23px;height:23px;font-size:20px}.album-empty{min-height:370px}.viewer-stage{gap:7px}.viewer-prev,.viewer-next{width:28px;height:28px;font-size:23px}.viewer-image{max-width:calc(100% - 70px)}}
 @media(max-width:380px){.personal-intro h1{font-size:37px}.personal-cat{width:58px;height:58px}.trip-folders{grid-template-columns:1fr;max-width:280px}.interest-folders .folder-name{font-size:15.5px}.interest-folders .folder-front{padding:15px}.interest-folders .archive-folder{height:181px}.folder-mark{right:15px;top:14px}.folder-collection{gap:14px}.album-add>span{display:none}}
 @media(prefers-reduced-motion:reduce){.folder-sheet,.folder-front,.photo-remove{transition:none}}
 
@@ -106,3 +106,16 @@ body:has(.album-window[open]){overflow:hidden}
 .archive-credits ul{padding-left:18px;margin:10px 0 0}
 .archive-credits a{color:inherit;text-decoration:underline}
 @media(min-width:761px) and (max-width:950px){.album-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Keep trips as concise records while their photo albums are archived. */
+.trip-entry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:12px 0 20px}
+.trip-entry{min-width:0;padding:24px 22px 20px;border:1px solid #e4dfe9;border-top:3px solid #cbbbdc;border-radius:9px;background:rgba(255,255,255,.7)}
+.trip-entry-blue{border-top-color:#b8ccdf}
+.trip-entry-green{border-top-color:#cad5b8}
+.trip-entry h3{font-family:"Quicksand",var(--sans);font-size:22px;line-height:1.4;font-weight:600;color:#49414f;margin:0 0 10px}
+.trip-entry a{font-size:15px;line-height:1.6;font-weight:400;color:#65596f;text-decoration:none}
+.trip-entry a:hover{text-decoration:underline;text-underline-offset:3px}
+.trip-entry p{font-size:13px;line-height:1.5;color:#8a8192;margin:9px 0 0}
+@media(max-width:760px){.trip-entry-grid{grid-template-columns:1fr;gap:13px;padding-top:5px}.trip-entry{padding:18px 20px}.trip-entry h3{font-size:21px;margin-bottom:5px}.trip-entry p{margin-top:6px}}
+
+.album-grid:has(.album-empty){display:block}

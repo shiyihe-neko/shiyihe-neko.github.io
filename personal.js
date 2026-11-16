@@ -21,6 +21,10 @@ function archiveFolder(album) {
   </button>`;
 }
 
+function archiveTripEntry(album) {
+  return `<article class="trip-entry trip-entry-${album.tone}"><h3>${archiveEscape(album.name)}</h3><a href="${archiveEscape(album.conferenceUrl)}" target="_blank" rel="noopener noreferrer" title="${archiveEscape(album.conferenceName)}">${archiveEscape(album.context)}</a><p>${archiveEscape(album.detail)}</p></article>`;
+}
+
 function renderPersonalPage() {
   currentProject = null;
   isDeck = false;
@@ -29,12 +33,14 @@ function renderPersonalPage() {
   document.title = 'Personal — Shiyi He';
   setSiteNavigation('personal');
   const albums = archiveAlbums();
+  const showTripPhotos = personalContent.showTripPhotos !== false;
+  const coverCredits = albums.filter(album => album.credit && (album.kind !== "trip" || showTripPhotos));
   main.innerHTML = `<div class="personal-page wrap">
     <div class="personal-intro"><h1>Personal.</h1><img class="personal-cat" src="assets/brand/shiyi-cat.svg?v=city-archive-20261116" width="80" height="80" alt="A little hand-drawn cat"></div>
     <nav class="personal-index" aria-label="On this page"><a href="personal/#trips">Trips</a><a href="personal/#interests">Interests</a></nav>
-    <section class="archive-section" id="trips" aria-labelledby="trips-title"><h2 id="trips-title">Trips</h2><div class="folder-collection trip-folders">${albums.filter(album => album.kind === 'trip').map(archiveFolder).join('')}</div></section>
+    <section class="archive-section" id="trips" aria-labelledby="trips-title"><h2 id="trips-title">Trips</h2><div class="${showTripPhotos ? "folder-collection trip-folders" : "trip-entry-grid"}">${albums.filter(album => album.kind === 'trip').map(showTripPhotos ? archiveFolder : archiveTripEntry).join('')}</div></section>
     <section class="archive-section" id="interests" aria-labelledby="interests-title"><h2 id="interests-title">Beyond research, I also enjoy…</h2><div class="folder-collection interest-folders">${albums.filter(album => album.kind === 'interest').map(archiveFolder).join('')}</div></section>
-    <details class="archive-credits"><summary>Photo credits</summary><ul>${albums.filter(album => album.credit).map(album => `<li>${archiveEscape(album.name)}: <a href="${archiveEscape(album.credit.source)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.author)}</a> · <a href="${archiveEscape(album.credit.licenseUrl)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.license)}</a>. Cropped, resized, and tinted.</li>`).join('')}</ul></details>
+    ${coverCredits.length ? `<details class="archive-credits"><summary>Photo credits</summary><ul>${coverCredits.map(album => `<li>${archiveEscape(album.name)}: <a href="${archiveEscape(album.credit.source)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.author)}</a> · <a href="${archiveEscape(album.credit.licenseUrl)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.license)}</a>. Cropped, resized, and tinted.</li>`).join('')}</ul></details>` : ''}
   </div>
   <dialog class="album-window" aria-labelledby="album-title">
     <header class="album-header"><div><h2 id="album-title"></h2><p class="album-meta"><a class="album-conference" target="_blank" rel="noopener noreferrer" hidden></a><span id="album-count"></span></p><p id="album-description" hidden></p></div><div class="album-actions"><button type="button" class="album-close" aria-label="Close album">×</button></div></header>
@@ -75,6 +81,9 @@ function updateArchiveFolders() {
 
 function setupArchiveDialog() {
   const dialog = document.querySelector('.album-window');
+  archiveState.gridObserver?.disconnect();
+  archiveState.gridObserver = new ResizeObserver(layoutArchiveGrid);
+  archiveState.gridObserver.observe(dialog.querySelector('.album-grid'));
   dialog.querySelector('.album-close').addEventListener('click', () => dialog.close());
   dialog.querySelector('.viewer-back').addEventListener('click', closeArchiveViewer);
   dialog.querySelector('.viewer-prev').addEventListener('click', () => showArchivePhoto(archiveState.viewer - 1));
@@ -101,7 +110,7 @@ function setupArchiveDialog() {
 }
 
 function openArchiveAlbum(id) {
-  if (!archiveAlbums().some(album => album.id === id)) return;
+  if (!archiveAlbums().some(album => album.id === id && (album.kind !== "trip" || personalContent.showTripPhotos !== false))) return;
   archiveState.active = id;
   archiveState.viewer = -1;
   const dialog = document.querySelector('.album-window');
@@ -109,6 +118,7 @@ function openArchiveAlbum(id) {
   dialog.querySelector(".album-body").scrollTop = 0;
   dialog.showModal();
   dialog.querySelector(".album-close").focus({ preventScroll: true });
+  requestAnimationFrame(layoutArchiveGrid);
 }
 
 function renderArchiveAlbum() {
@@ -127,9 +137,24 @@ function renderArchiveAlbum() {
   const grid = dialog.querySelector('.album-grid');
   grid.innerHTML = photos.length ? photos.map((photo, index) => `<article class="album-photo"><button type="button" class="photo-open" data-photo="${index}" aria-label="View ${archiveEscape(album.name)} photo ${index + 1}"><img src="${archiveEscape(archiveUrl(photo.thumb))}" alt="${archiveEscape(album.name)} photo ${index + 1}" width="${photo.width}" height="${photo.height}" loading="lazy"></button></article>`).join('') : `<div class="album-empty"><svg viewBox="0 0 48 40" aria-hidden="true"><rect x="3" y="8" width="42" height="29" rx="5"/><path d="m14 8 4-5h12l4 5"/><circle cx="24" cy="22" r="9"/></svg><p>No photos yet.</p></div>`;
   grid.querySelectorAll('[data-photo]').forEach(button => button.addEventListener('click', () => showArchivePhoto(Number(button.dataset.photo))));
+  requestAnimationFrame(layoutArchiveGrid);
   grid.hidden = archiveState.viewer >= 0;
   dialog.querySelector('.album-viewer').hidden = archiveState.viewer < 0;
   if (archiveState.viewer >= 0) showArchivePhoto(archiveState.viewer);
+}
+
+// Preserve photo order and full images, while filling gaps beneath shorter photos.
+function layoutArchiveGrid() {
+  const grid = document.querySelector('.album-window[open] .album-grid');
+  if (!grid || grid.hidden || !grid.clientWidth) return;
+  for (const card of grid.querySelectorAll('.album-photo')) {
+    const image = card.querySelector('img');
+    const style = getComputedStyle(card);
+    const frame = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom)
+      + parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+    const height = image.clientWidth * Number(image.getAttribute('height')) / Number(image.getAttribute('width'));
+    card.style.gridRowEnd = `span ${Math.ceil(height + frame + 16)}`;
+  }
 }
 
 function showArchivePhoto(index) {
@@ -153,5 +178,6 @@ function closeArchiveViewer() {
   const dialog = document.querySelector('.album-window');
   dialog.querySelector('.album-grid').hidden = false;
   dialog.querySelector('.album-viewer').hidden = true;
+  requestAnimationFrame(layoutArchiveGrid);
 }
 

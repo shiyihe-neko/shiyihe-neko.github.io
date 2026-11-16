@@ -1,4 +1,5 @@
 const personalContent = {
+  "showTripPhotos": false,
   "availability": {
     "label": "Open to internships & full-time roles",
     "areas": "UX Research · HCI · Human–AI Collaboration"
