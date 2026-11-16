@@ -42,7 +42,7 @@ const personalContent = {
     },
     {
       "place": "Seattle, US",
-      "description": "Attended the Northwest Database Society Annual Meeting (NWDS 2024) in Seattle and shared a wonderful dinner with good friends.",
+      "description": "In Seattle for NWDS 2024, with time to catch up with friends over dinner.",
       "context": "NWDS 2024",
       "detail": "Feb 2024",
       "conferenceName": "Northwest Database Society Annual Meeting",

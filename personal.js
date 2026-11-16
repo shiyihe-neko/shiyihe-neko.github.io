@@ -34,11 +34,11 @@ function renderPersonalPage() {
     <nav class="personal-index" aria-label="On this page"><a href="personal/#trips">Trips</a><a href="personal/#interests">Interests</a></nav>
     <section class="archive-section" id="trips" aria-labelledby="trips-title"><h2 id="trips-title">Trips</h2><div class="folder-collection trip-folders">${albums.filter(album => album.kind === 'trip').map(archiveFolder).join('')}</div></section>
     <section class="archive-section" id="interests" aria-labelledby="interests-title"><h2 id="interests-title">Beyond research, I also enjoy…</h2><div class="folder-collection interest-folders">${albums.filter(album => album.kind === 'interest').map(archiveFolder).join('')}</div></section>
+    <details class="archive-credits"><summary>Photo credits</summary><ul>${albums.filter(album => album.credit).map(album => `<li>${archiveEscape(album.name)}: <a href="${archiveEscape(album.credit.source)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.author)}</a> · <a href="${archiveEscape(album.credit.licenseUrl)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.license)}</a>. Cropped, resized, and tinted.</li>`).join('')}</ul></details>
   </div>
   <dialog class="album-window" aria-labelledby="album-title">
-    <header class="album-header"><div><h2 id="album-title"></h2><p id="album-count"></p><p id="album-description" hidden></p><a class="album-conference" target="_blank" rel="noopener noreferrer" hidden></a></div><div class="album-actions"><button type="button" class="album-close" aria-label="Close album">×</button></div></header>
+    <header class="album-header"><div><h2 id="album-title"></h2><p class="album-meta"><a class="album-conference" target="_blank" rel="noopener noreferrer" hidden></a><span id="album-count"></span></p><p id="album-description" hidden></p></div><div class="album-actions"><button type="button" class="album-close" aria-label="Close album">×</button></div></header>
     <div class="album-body"><div class="album-grid"></div><div class="album-viewer" hidden><div class="viewer-toolbar"><button type="button" class="viewer-back">← Album</button><span class="viewer-count"></span></div><div class="viewer-stage"><button type="button" class="viewer-prev" aria-label="Previous photo">‹</button><img class="viewer-image" alt=""><button type="button" class="viewer-next" aria-label="Next photo">›</button></div></div></div>
-    <p class="album-credit" hidden></p>
   </dialog>`;
   setupArchiveDialog();
   main.querySelectorAll('[data-album]').forEach(button => button.addEventListener('click', () => openArchiveAlbum(button.dataset.album)));
@@ -106,7 +106,9 @@ function openArchiveAlbum(id) {
   archiveState.viewer = -1;
   const dialog = document.querySelector('.album-window');
   renderArchiveAlbum();
+  dialog.querySelector(".album-body").scrollTop = 0;
   dialog.showModal();
+  dialog.querySelector(".album-close").focus({ preventScroll: true });
 }
 
 function renderArchiveAlbum() {
@@ -122,9 +124,6 @@ function renderArchiveAlbum() {
   const event = dialog.querySelector('.album-conference');
   event.hidden = !album.context;
   if (album.context) { event.textContent = `${album.context} · ${album.detail}`; event.href = album.conferenceUrl; event.title = album.conferenceName; }
-  const credit = dialog.querySelector('.album-credit');
-  credit.hidden = !album.credit;
-  if (album.credit) credit.innerHTML = `Cover: <a href="${archiveEscape(album.credit.source)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.author)}</a> · <a href="${archiveEscape(album.credit.licenseUrl)}" target="_blank" rel="noopener noreferrer">${archiveEscape(album.credit.license)}</a> · resized / translucent`;
   const grid = dialog.querySelector('.album-grid');
   grid.innerHTML = photos.length ? photos.map((photo, index) => `<article class="album-photo"><button type="button" class="photo-open" data-photo="${index}" aria-label="View ${archiveEscape(album.name)} photo ${index + 1}"><img src="${archiveEscape(archiveUrl(photo.thumb))}" alt="${archiveEscape(album.name)} photo ${index + 1}" width="${photo.width}" height="${photo.height}" loading="lazy"></button></article>`).join('') : `<div class="album-empty"><svg viewBox="0 0 48 40" aria-hidden="true"><rect x="3" y="8" width="42" height="29" rx="5"/><path d="m14 8 4-5h12l4 5"/><circle cx="24" cy="22" r="9"/></svg><p>No photos yet.</p></div>`;
   grid.querySelectorAll('[data-photo]').forEach(button => button.addEventListener('click', () => showArchivePhoto(Number(button.dataset.photo))));
