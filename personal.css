@@ -119,3 +119,46 @@ body:has(.album-window[open]){overflow:hidden}
 @media(max-width:760px){.trip-entry-grid{grid-template-columns:1fr;gap:13px;padding-top:5px}.trip-entry{padding:18px 20px}.trip-entry h3{font-size:21px;margin-bottom:5px}.trip-entry p{margin-top:6px}}
 
 .album-grid:has(.album-empty){display:block}
+/* Four subjects, each with its own space. Photo stacks open only their own album. */
+.joy-zine{margin:34px 0 15px;padding-top:20px;border-top:1px solid #e0dbe5}
+.joy-heading{margin-bottom:30px}
+.joy-heading h2{font:500 27px/1.4 "Quicksand",var(--sans);letter-spacing:0;color:#49414f;margin:0}
+.joy-intro{font:300 16px/1.6 var(--sans);color:#82758b;margin:9px 0 0}
+.joy-spreads{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px 28px;padding:0 10px 15px;align-items:center}
+.joy-spreads article{min-width:0}
+.joy-spreads p{font:300 17px/1.65 var(--sans);color:#726778;margin:0}
+.joy-baking{grid-column:1/8;grid-row:1}
+.joy-photo-stack{display:block;position:relative;isolation:isolate;width:100%;height:385px;padding:0;border:0;background:transparent;cursor:zoom-in;margin-bottom:23px}
+.stack-print{display:block;position:absolute;left:var(--pile-x);top:var(--pile-y);width:47%;padding:8px;background:#fff;border:1px solid #e3dce6;border-radius:2px;box-shadow:0 3px 10px #3d2b4c12;transform:translate(-50%,-50%) rotate(var(--pile-rotation));z-index:var(--pile-layer);pointer-events:none;transition:transform .2s ease,box-shadow .2s ease}
+.stack-print img{display:block;width:100%;height:auto;aspect-ratio:4/4.8;object-fit:cover}
+.joy-photo-stack:hover .stack-print:last-child,.joy-photo-stack:focus-visible .stack-print:last-child{transform:translate(-50%,-52%) rotate(-2deg);box-shadow:0 10px 26px #3d2b4c20}
+.joy-photo-stack:focus-visible{outline:2px solid #bca7ca;outline-offset:5px;border-radius:5px}
+.joy-baking>p,.joy-snow>p{padding:0 16px}
+.joy-music{grid-column:9/13;grid-row:1;background:#f2edf5;border-block:2px dotted #c9b8d1;padding:25px 23px;transform:rotate(2.5deg);box-shadow:3px 6px 0 #e9e2ef45;margin-top:10px}
+.zine-record{position:relative;width:85px;height:85px;margin:0 0 23px 3px;border-radius:50%;background:repeating-radial-gradient(circle,#39343e 0px,#39343e 2px,#4d4654 3px,#39343e 4px);transform:rotate(-15deg)}
+.zine-record:after{content:"";position:absolute;width:29px;height:29px;inset:28px;border-radius:50%;background:#c3a6c5;border:1px solid #ddc9dc}
+.zine-record>span{position:absolute;inset:39px;border-radius:50%;background:#f7f4f9;z-index:1}
+.joy-travel{grid-column:1/5;grid-row:2;padding:25px 23px;background:#f0f4f7;border-block:1px dashed #c3cfd9;transform:rotate(-2deg);margin:20px 0 0}
+.joy-travel svg{display:block;width:82px;height:68px;stroke:#96a9ba;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin:0 0 18px}
+.joy-snow{grid-column:6/13;grid-row:2}
+@media(max-width:760px){.joy-zine{margin-top:24px;padding-top:25px}.joy-heading{margin-bottom:22px}.joy-heading h2{font-size:24px}.joy-intro{font-size:14px;margin-top:7px}.joy-spreads{grid-template-columns:minmax(0,1fr);gap:30px;padding:0 5px 10px}.joy-spreads article{grid-column:1;grid-row:auto}.joy-spreads p{font-size:15px}.joy-photo-stack{height:290px;margin-bottom:15px}.stack-print{width:51%;padding:6px}.joy-baking>p,.joy-snow>p{padding:0 3px}.joy-music,.joy-travel{margin:0 9px;display:grid;grid-template-columns:65px minmax(0,1fr);gap:18px;align-items:center;padding:21px}.zine-record{width:64px;height:64px;margin:0}.zine-record:after{inset:21px;width:22px;height:22px}.zine-record>span{inset:29px}.joy-travel svg{width:64px;height:54px;margin:0}.joy-snow{order:2}.joy-music{order:3}.joy-travel{order:4}}
+@media(prefers-reduced-motion:reduce){.stack-print{transition:none}}
+
+/* Real concert and travel photographs replace the earlier graphic notes. */
+.joy-with-photo{padding:0;background:none;border:0;box-shadow:none;transform:none}
+.joy-single-photo{display:block;width:100%;padding:8px;border:1px solid #e3dce6;border-radius:2px;background:#fff;box-shadow:0 3px 10px #3d2b4c12;transform:rotate(3deg);cursor:zoom-in;transition:transform .2s ease}
+.joy-single-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain}
+.joy-single-photo:hover{transform:rotate(1deg) translateY(-3px)}
+.joy-single-photo:focus-visible{outline:2px solid #bca7ca;outline-offset:5px}
+.joy-travel .joy-single-photo{transform:rotate(-3deg)}
+.joy-travel .joy-single-photo:hover{transform:rotate(-1deg) translateY(-3px)}
+.joy-with-photo>p{margin:23px 7px 0}
+@media(max-width:760px){.joy-with-photo{display:block;padding:0;margin:0 9px}.joy-with-photo>p{margin-top:18px}.joy-single-photo{max-width:360px;margin-inline:auto}}
+@media(prefers-reduced-motion:reduce){.joy-single-photo{transition:none}}
+
+/* Videos share the album and stop when the viewer closes or changes items. */
+.photo-open{position:relative}
+.video-badge{position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:8px;padding:5px 9px;border-radius:20px;background:rgba(26,22,32,.75);color:#fff;font:400 12px/1.4 var(--sans);pointer-events:none}
+.video-badge>span{font-size:11px}
+.viewer-video{display:block;min-width:0;max-width:calc(100% - 102px);max-height:100%;width:auto;height:auto;object-fit:contain;background:#161319;border-radius:4px}
+@media(max-width:760px){.viewer-video{max-width:calc(100% - 70px)}}

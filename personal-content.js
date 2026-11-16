@@ -81,6 +81,18 @@ const personalContent = {
       "name": "Tennis",
       "emoji": "🎾",
       "color": "green"
+    },
+    {
+      "id": "jpop",
+      "name": "Music",
+      "color": "lilac",
+      "emoji": "🎵"
+    },
+    {
+      "id": "travel",
+      "name": "Travel & Photography",
+      "color": "blue",
+      "emoji": "📷"
     }
   ]
 };

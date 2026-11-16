@@ -6,7 +6,9 @@ Published with GitHub Pages from the root of `main`. No build step is required; 
 
 ## Photo archive
 
-Visitors can browse albums; the website has no upload or editing interface. Album images and thumbnails live under `assets/albums/`, with entries in `assets/albums/manifest.json`. City-cover image credits and licenses are stored in `assets/personal/cities/credits.json` and shown inside the corresponding album.
+Visitors can browse separate Baking, Snowboarding, Music, and Travel & Photography albums. The website has no upload or editing interface. Media and thumbnails live under `assets/albums/`, with entries in `assets/albums/manifest.json`. Video entries use `type: "video"` and a poster image. Playback stops when leaving or closing the viewer.
+
+Trips currently appear as text records (`showTripPhotos: false`); the original photos and city-cover credits are retained for future use.
 
 ## Pages
 

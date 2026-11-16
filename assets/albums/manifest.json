@@ -168,6 +168,35 @@
     },
     "tennis": {
       "photos": []
+    },
+    "jpop": {
+      "photos": [
+        {
+          "src": "assets/albums/jpop/live-show.jpg",
+          "thumb": "assets/albums/jpop/live-show-thumb.webp",
+          "width": 1620,
+          "height": 1080
+        },
+        {
+          "type": "video",
+          "src": "assets/albums/jpop/live-show-clip.mp4",
+          "thumb": "assets/albums/jpop/live-show-video-thumb.webp",
+          "poster": "assets/albums/jpop/live-show-video-poster.jpg",
+          "width": 1280,
+          "height": 720,
+          "duration": 30
+        }
+      ]
+    },
+    "travel": {
+      "photos": [
+        {
+          "src": "assets/albums/travel/garden-and-red-roof.jpg",
+          "thumb": "assets/albums/travel/garden-and-red-roof-thumb.webp",
+          "width": 1440,
+          "height": 960
+        }
+      ]
     }
   }
 }
