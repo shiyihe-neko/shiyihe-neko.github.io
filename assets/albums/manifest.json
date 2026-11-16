@@ -26,6 +26,12 @@
           "thumb": "assets/albums/seattle/dinner-thumb.webp",
           "width": 419,
           "height": 1280
+        },
+        {
+          "src": "assets/albums/seattle/nwds-badges.jpg",
+          "thumb": "assets/albums/seattle/nwds-badges-thumb.webp",
+          "width": 960,
+          "height": 1280
         }
       ]
     },
