@@ -28,7 +28,7 @@ const academicProjects = {
 function renderHome(target) {
   currentProject = null;
   isDeck = false;
-  document.title = 'Shiyi He';
+  document.title = 'Shiyi He — HCI Researcher';
   document.body.dataset.page = 'home';
   setSiteNavigation('home');
   main.innerHTML = `<section id="about" class="academic-intro wrap" aria-label="About Shiyi He">
