@@ -106,7 +106,62 @@
       ]
     },
     "snowboarding": {
-      "photos": []
+      "photos": [
+        {
+          "src": "assets/albums/snowboarding/snowboard-portrait.jpg",
+          "thumb": "assets/albums/snowboarding/snowboard-portrait-thumb.webp",
+          "width": 901,
+          "height": 1602
+        },
+        {
+          "src": "assets/albums/snowboarding/slope-run.jpg",
+          "thumb": "assets/albums/snowboarding/slope-run-thumb.webp",
+          "width": 1206,
+          "height": 904
+        },
+        {
+          "src": "assets/albums/snowboarding/downhill-run.jpg",
+          "thumb": "assets/albums/snowboarding/downhill-run-thumb.webp",
+          "width": 1206,
+          "height": 678
+        },
+        {
+          "src": "assets/albums/snowboarding/friends-on-the-slopes.jpg",
+          "thumb": "assets/albums/snowboarding/friends-on-the-slopes-thumb.webp",
+          "width": 1206,
+          "height": 1608
+        },
+        {
+          "src": "assets/albums/snowboarding/sunny-snowboard-selfie.jpg",
+          "thumb": "assets/albums/snowboarding/sunny-snowboard-selfie-thumb.webp",
+          "width": 1206,
+          "height": 1608
+        },
+        {
+          "src": "assets/albums/snowboarding/snowy-trails.jpg",
+          "thumb": "assets/albums/snowboarding/snowy-trails-thumb.webp",
+          "width": 1206,
+          "height": 1608
+        },
+        {
+          "src": "assets/albums/snowboarding/mountain-panorama.jpg",
+          "thumb": "assets/albums/snowboarding/mountain-panorama-thumb.webp",
+          "width": 1206,
+          "height": 904
+        },
+        {
+          "src": "assets/albums/snowboarding/winter-trees.jpg",
+          "thumb": "assets/albums/snowboarding/winter-trees-thumb.webp",
+          "width": 1206,
+          "height": 904
+        },
+        {
+          "src": "assets/albums/snowboarding/mountain-window.jpg",
+          "thumb": "assets/albums/snowboarding/mountain-window-thumb.webp",
+          "width": 1206,
+          "height": 1608
+        }
+      ]
     },
     "photography": {
       "photos": []
