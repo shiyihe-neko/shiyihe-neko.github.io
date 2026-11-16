@@ -8,7 +8,26 @@
       "photos": []
     },
     "seattle": {
-      "photos": []
+      "photos": [
+        {
+          "src": "assets/albums/seattle/poster.jpg",
+          "thumb": "assets/albums/seattle/poster-thumb.webp",
+          "width": 1077,
+          "height": 1280
+        },
+        {
+          "src": "assets/albums/seattle/friends.jpg",
+          "thumb": "assets/albums/seattle/friends-thumb.webp",
+          "width": 598,
+          "height": 1280
+        },
+        {
+          "src": "assets/albums/seattle/dinner.jpg",
+          "thumb": "assets/albums/seattle/dinner-thumb.webp",
+          "width": 419,
+          "height": 1280
+        }
+      ]
     },
     "baking": {
       "photos": []

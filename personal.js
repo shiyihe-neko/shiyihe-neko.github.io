@@ -36,7 +36,7 @@ function renderPersonalPage() {
     <section class="archive-section" id="interests" aria-labelledby="interests-title"><h2 id="interests-title">Beyond research, I also enjoy…</h2><div class="folder-collection interest-folders">${albums.filter(album => album.kind === 'interest').map(archiveFolder).join('')}</div></section>
   </div>
   <dialog class="album-window" aria-labelledby="album-title">
-    <header class="album-header"><div><h2 id="album-title"></h2><p id="album-count"></p><a class="album-conference" target="_blank" rel="noopener noreferrer" hidden></a></div><div class="album-actions"><button type="button" class="album-close" aria-label="Close album">×</button></div></header>
+    <header class="album-header"><div><h2 id="album-title"></h2><p id="album-count"></p><p id="album-description" hidden></p><a class="album-conference" target="_blank" rel="noopener noreferrer" hidden></a></div><div class="album-actions"><button type="button" class="album-close" aria-label="Close album">×</button></div></header>
     <div class="album-body"><div class="album-grid"></div><div class="album-viewer" hidden><div class="viewer-toolbar"><button type="button" class="viewer-back">← Album</button><span class="viewer-count"></span></div><div class="viewer-stage"><button type="button" class="viewer-prev" aria-label="Previous photo">‹</button><img class="viewer-image" alt=""><button type="button" class="viewer-next" aria-label="Next photo">›</button></div></div></div>
     <p class="album-credit" hidden></p>
   </dialog>`;
@@ -116,6 +116,9 @@ function renderArchiveAlbum() {
   const dialog = document.querySelector('.album-window');
   dialog.querySelector('#album-title').textContent = album.name;
   dialog.querySelector('#album-count').textContent = `${photos.length} ${photos.length === 1 ? 'photo' : 'photos'}`;
+  const description = dialog.querySelector('#album-description');
+  description.textContent = album.description || '';
+  description.hidden = !album.description;
   const event = dialog.querySelector('.album-conference');
   event.hidden = !album.context;
   if (album.context) { event.textContent = `${album.context} · ${album.detail}`; event.href = album.conferenceUrl; event.title = album.conferenceName; }

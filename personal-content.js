@@ -42,6 +42,7 @@ const personalContent = {
     },
     {
       "place": "Seattle, US",
+      "description": "在西雅图，和好朋友们共享美食，留下相聚的快乐。",
       "context": "NWDS 2024",
       "detail": "Feb 2024",
       "conferenceName": "Northwest Database Society Annual Meeting",
