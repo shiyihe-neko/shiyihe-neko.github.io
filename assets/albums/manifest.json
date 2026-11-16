@@ -36,7 +36,74 @@
       ]
     },
     "baking": {
-      "photos": []
+      "photos": [
+        {
+          "src": "assets/albums/baking/christmas-cake.jpg",
+          "thumb": "assets/albums/baking/christmas-cake-thumb.webp",
+          "width": 284,
+          "height": 1280
+        },
+        {
+          "src": "assets/albums/baking/tiger-roll.jpg",
+          "thumb": "assets/albums/baking/tiger-roll-thumb.webp",
+          "width": 1080,
+          "height": 1136
+        },
+        {
+          "src": "assets/albums/baking/moon-and-stars-cake.jpg",
+          "thumb": "assets/albums/baking/moon-and-stars-cake-thumb.webp",
+          "width": 1080,
+          "height": 1240
+        },
+        {
+          "src": "assets/albums/baking/lemon-cake.jpg",
+          "thumb": "assets/albums/baking/lemon-cake-thumb.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "assets/albums/baking/halloween-cookies.jpg",
+          "thumb": "assets/albums/baking/halloween-cookies-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "assets/albums/baking/halloween-treats.jpg",
+          "thumb": "assets/albums/baking/halloween-treats-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "assets/albums/baking/ghost-cakes.jpg",
+          "thumb": "assets/albums/baking/ghost-cakes-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "assets/albums/baking/birthday-cake.jpg",
+          "thumb": "assets/albums/baking/birthday-cake-thumb.webp",
+          "width": 853,
+          "height": 1280
+        },
+        {
+          "src": "assets/albums/baking/strawberry-rolls.jpg",
+          "thumb": "assets/albums/baking/strawberry-rolls-thumb.webp",
+          "width": 1080,
+          "height": 1245
+        },
+        {
+          "src": "assets/albums/baking/strawberry-cream-pastry.jpg",
+          "thumb": "assets/albums/baking/strawberry-cream-pastry-thumb.webp",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "assets/albums/baking/strawberry-cake.jpg",
+          "thumb": "assets/albums/baking/strawberry-cake-thumb.webp",
+          "width": 960,
+          "height": 1280
+        }
+      ]
     },
     "snowboarding": {
       "photos": []
