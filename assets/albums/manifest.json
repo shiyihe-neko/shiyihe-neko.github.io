@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "albums": {
+    "germany": {
+      "photos": []
+    },
+    "boston": {
+      "photos": []
+    },
+    "seattle": {
+      "photos": []
+    },
+    "baking": {
+      "photos": []
+    },
+    "snowboarding": {
+      "photos": []
+    },
+    "photography": {
+      "photos": []
+    },
+    "tennis": {
+      "photos": []
+    }
+  }
+}

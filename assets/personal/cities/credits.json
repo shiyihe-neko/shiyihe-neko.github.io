@@ -1,0 +1,29 @@
+[
+  {
+    "id": "paderborn",
+    "file": "paderborn.webp",
+    "author": "ludger1961",
+    "source": "https://commons.wikimedia.org/wiki/File:Paderborner_Rathaus.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Resized and converted to WebP; displayed cropped with CSS translucency."
+  },
+  {
+    "id": "boston",
+    "file": "boston.webp",
+    "author": "Eric Baetscher / Fcb981",
+    "source": "https://commons.wikimedia.org/wiki/File:Boston_Skyline_Panorama_Dusk_Edit_1.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Resized and converted to WebP; displayed cropped with CSS translucency."
+  },
+  {
+    "id": "seattle",
+    "file": "seattle.webp",
+    "author": "SounderBruce",
+    "source": "https://commons.wikimedia.org/wiki/File:Downtown_Seattle_skyline_from_W_Kinnear_Place,_Aug_2022.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "changes": "Resized and converted to WebP; displayed cropped with CSS translucency."
+  }
+]
