@@ -6,24 +6,6 @@ const personalContent = {
   },
   "trips": [
     {
-      "place": "Paderborn, Germany",
-      "context": "IEEE VL/HCC 2026",
-      "detail": "Sep–Oct 2026",
-      "conferenceName": "IEEE Symposium on Visual Languages and Human-Centric Computing",
-      "conferenceUrl": "https://conf.researchr.org/home/vlhcc-2026",
-      "cover": "assets/personal/cities/paderborn.webp",
-      "credit": {
-        "id": "paderborn",
-        "file": "paderborn.webp",
-        "author": "ludger1961",
-        "source": "https://commons.wikimedia.org/wiki/File:Paderborner_Rathaus.jpg",
-        "license": "CC BY-SA 3.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-        "changes": "Resized and converted to WebP; displayed cropped with CSS translucency."
-      },
-      "id": "germany"
-    },
-    {
       "place": "Boston, US",
       "context": "IEEE VIS 2026",
       "detail": "Nov 2026",
@@ -40,6 +22,24 @@ const personalContent = {
         "changes": "Resized and converted to WebP; displayed cropped with CSS translucency."
       },
       "id": "boston"
+    },
+    {
+      "place": "Paderborn, Germany",
+      "context": "IEEE VL/HCC 2026",
+      "detail": "Sep–Oct 2026",
+      "conferenceName": "IEEE Symposium on Visual Languages and Human-Centric Computing",
+      "conferenceUrl": "https://conf.researchr.org/home/vlhcc-2026",
+      "cover": "assets/personal/cities/paderborn.webp",
+      "credit": {
+        "id": "paderborn",
+        "file": "paderborn.webp",
+        "author": "ludger1961",
+        "source": "https://commons.wikimedia.org/wiki/File:Paderborner_Rathaus.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "changes": "Resized and converted to WebP; displayed cropped with CSS translucency."
+      },
+      "id": "germany"
     },
     {
       "place": "Seattle, US",

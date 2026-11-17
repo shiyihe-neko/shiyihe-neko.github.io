@@ -1,0 +1,135 @@
+/* A shared chromatic editorial system: tinted paper, deep ink, and tonal project fields. */
+:root{--bg:#fcfbff;--ink:#282828;--muted:#716a7d;--line:#dfdae9;--accent:#282828;--violet:#63508f;--teal:#326f68;--blue:#456c94;--rose:#94566e;--paper-violet:#eeebf7;--paper-mint:#e8f1ed;--paper-blue:#e9eff8;--paper-rose:#f7eaf0}
+body,body[data-page="home"],body[data-page="personal"]{background:#fcfbff;color:var(--ink);border-top:0}
+p{color:var(--ink)}
+::selection{background:#ded7f3;color:#352b4c}
+.site-header,body[data-page="personal"]>.site-header{background:transparent;border-bottom:1px solid var(--line)}
+.home-greeting,.home-greeting a,.site-header .brand{color:#282828}
+.site-header nav a{color:#282828;font-weight:400}
+.site-header nav a:hover,.site-header nav a.is-active{color:#282828;text-decoration:none}
+.site-header nav a.is-active:after{display:block;background:#282828;height:2px;bottom:2px}
+.academic-intro{padding-top:30px}
+.academic-intro-layout{grid-template-columns:248px minmax(0,1fr);column-gap:34px;row-gap:22px}
+.academic-profile{background:var(--paper-violet);padding:14px 14px 20px;border-radius:3px}
+.academic-profile>img{width:220px;height:290px;border-radius:2px;object-fit:cover}
+.academic-profile .academic-role{color:#282828}
+.academic-profile span,.academic-profile>a.profile-email,.academic-socials a{color:#282828}
+.academic-profile>a.profile-email:hover,.academic-socials a:hover{color:#282828}
+.academic-socials a:hover{background:#e1dced}
+.academic-profile .academic-hobbies{padding-top:17px;margin-top:17px;border-top:1px solid #d9d1e6}
+.academic-profile .academic-hobbies p{color:#675b77;font-size:13px}
+.academic-intro-layout>.availability-status{background:#f5f2fa;color:#282828;border:1px solid #e5deef;border-radius:999px;box-shadow:none;padding:9px 14px;font-size:16px;gap:10px}
+.academic-intro-layout>.availability-status:before{display:none}
+.academic-intro-layout>.availability-status:hover{background:#eee9f6;color:#282828;border:1px solid #d8cce7;box-shadow:none}
+.academic-intro-layout>.availability-status .availability-dot{background:#7eb7d8;box-shadow:0 0 0 3px #d6e7f4,0 0 8px #b5d9ef}
+.academic-bio a.advisor-link,.academic-bio a.advisor-link:hover{color:#282828}
+.academic-bio .research-emphasis{font-weight:400;color:#282828}
+.academic-bio .research-emphasis:nth-of-type(2){color:#282828}
+.academic-bio .research-emphasis:nth-of-type(3){color:#282828}
+.academic-bio a[href="#project/qualivision"],.academic-bio a[href="#project/qualivision"]:hover{color:#282828}
+.academic-bio a[href="#project/bibwrangler"],.academic-bio a[href="#project/bibwrangler"]:hover{color:#282828}
+.academic-bio a[href="#project/charles"],.academic-bio a[href="#project/charles"]:hover{color:#282828}
+.home-ai-svg .home-ai-nodes{fill:#655571}
+.home-ai-figure{opacity:.9}
+.academic-work{padding-top:30px;padding-bottom:38px}
+.academic-work .academic-section-heading{border-top:1px solid #d7cce4;padding-top:28px;margin-bottom:24px}
+.academic-work .academic-section-heading h2,.academic-methods>h2{color:#282828}
+.academic-project-grid{gap:22px}
+.academic-project{--project-paper:var(--paper-violet);--project-ink:var(--violet);background:var(--project-paper);border:0;border-radius:3px;padding:20px;box-shadow:none}
+.academic-project[data-project="qualivision"]{--project-paper:#eeebf7;--project-ink:#63508f}
+.academic-project[data-project="wrangling"]{--project-paper:#e8f1ed;--project-ink:#326f68}
+.academic-project[data-project="dsf"]{--project-paper:#e9eff8;--project-ink:#456c94}
+.academic-project[data-project="bibwrangler"]{--project-paper:#f0f1e6;--project-ink:#656e41}
+.academic-project[data-project="palette"]{--project-paper:#f7eaf0;--project-ink:#94566e}
+.academic-project[data-project="charles"]{--project-paper:#e7eff3;--project-ink:#426c82}
+.academic-project h3{margin-bottom:16px;font-size:20px;font-weight:500}
+.academic-project h3 a,.academic-project-links a{color:#282828}
+.academic-project h3 a:hover,.academic-project-links a:hover{color:#282828;text-decoration-color:currentColor}
+.academic-thumbnail{background:#fff;padding:8px;margin-bottom:16px;border-radius:1px}
+.academic-thumbnail-palette{padding:0;background:#fff}
+.academic-thumbnail-palette img{object-fit:cover}
+.bib-notation{border:0;background:#fff;color:#736c74}
+.academic-project>p{color:#403b47}
+.academic-project-links a{text-decoration-color:color-mix(in srgb,var(--project-ink) 45%,transparent)}
+.academic-project-meta{color:#79727f}
+.academic-methods{padding-top:26px;padding-bottom:38px;border-top:1px solid var(--line)}
+.academic-skills .profile-skills{padding-top:7px;gap:28px}
+.academic-skills .about-skill-group{border-top:3px solid #bcaad7;padding-top:16px}
+.academic-skills .about-skill-group:nth-child(2){border-color:#a5c8be}
+.academic-skills .about-skill-group:nth-child(3){border-color:#dfaebe}
+.academic-skills .about-skill-group h3{color:#282828;font-weight:500}
+.academic-skills .about-skill-group:nth-child(2) h3{color:#282828}
+.academic-skills .about-skill-group:nth-child(3) h3{color:#282828}
+.academic-skills .about-skill-list{color:#665f70}
+.academic-footer{color:#82778e;border-color:var(--line)}
+.academic-footer span{color:inherit}
+.page-intro h1,.personal-intro h1{color:#282828}
+.page-intro>.text-link,.publication .pub-main h4 a{color:#282828}
+.publication-group>h3.publication-year{color:#282828;border-color:var(--line)}
+.publication{border-color:var(--line)}
+.publication-image{background:#fff}
+.publication-details{color:#6c6279}
+.experience-index a{color:#282828;border-color:#c5b6d9}
+.experience-panel{border:0;border-radius:3px;background:var(--paper-violet)}
+.experience-panel h2,.education-panel .education-list h3{color:#282828}
+.experience-panel#internships{background:var(--paper-mint)}
+.experience-panel#internships h2,.experience-panel#internships h3{color:#282828}
+.experience-panel#teaching{background:var(--paper-rose)}
+.experience-panel#teaching h2,.experience-panel#teaching h3{color:#282828}
+.experience-panel#service{background:var(--paper-blue)}
+.experience-panel#service h2,.experience-panel#service h3{color:#282828}
+.education-current{border-color:#d6cee4}
+.case-hero h1,.case-section h2{color:#282828}
+.case-top>a,.case-outline nav a.active{color:#282828}
+.takeaway{background:var(--paper-violet);border-color:#9c85be}
+.takeaway p{color:#282828}
+.case-section,.insight-list>li{border-color:var(--line)}
+@media(max-width:1000px) and (min-width:761px){.academic-intro-layout{grid-template-columns:224px minmax(0,1fr);column-gap:30px}.academic-profile{padding:12px 12px 20px}.academic-profile>img{width:200px;height:264px}}
+@media(max-width:760px) and (min-width:541px){.academic-intro-layout{grid-template-columns:184px minmax(0,1fr);column-gap:25px}.academic-profile{padding:12px}.academic-profile>img{width:160px;height:211px}}
+@media(max-width:540px){.academic-intro{padding-top:22px}.academic-intro-layout{gap:22px}.academic-profile{width:100%;display:grid;grid-template-columns:128px minmax(0,1fr);column-gap:20px;align-items:start;padding:16px;text-align:left}.academic-profile>img{grid-column:1;grid-row:1/7;width:128px;height:169px;margin:0}.academic-profile .academic-role{font-size:18px;margin-top:1px}.academic-profile>a.profile-email{font-size:11.5px;gap:4px;white-space:nowrap}.academic-profile .profile-email svg{width:13px;height:13px}.academic-profile>span{font-size:12px}.academic-socials{margin-top:9px;gap:8px}.academic-socials a{width:23px;height:23px}.academic-socials svg{width:19px;height:19px}.academic-profile .academic-hobbies{grid-column:1/-1;max-width:none;margin-top:16px;padding-top:14px}.academic-profile .academic-hobbies ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px}.academic-intro-layout>.availability-status{font-size:13px;padding:8px 10px;gap:8px}.academic-project{padding:20px}.academic-project h3{font-size:21px}.academic-work{padding-top:18px}.academic-work .academic-section-heading{padding-top:24px}.academic-methods{padding-top:24px}.academic-skills .profile-skills{gap:26px}}
+@media(max-width:360px){.academic-profile{grid-template-columns:106px minmax(0,1fr);gap:0 14px;padding:13px}.academic-profile>img{width:106px;height:155px}.academic-profile .academic-role{font-size:16px}.academic-profile>a.profile-email{font-size:10px}.academic-socials{gap:4px}.academic-intro-layout>.availability-status{font-size:11.5px}}
+
+/* Black typography, with playful color reserved for the three systems. */
+.academic-bio a[href="#project/qualivision"],.academic-bio a[href="#project/qualivision"]:hover{color:#946ab0}
+.academic-bio a[href="#project/bibwrangler"],.academic-bio a[href="#project/bibwrangler"]:hover{color:#7b8f43}
+.academic-bio a[href="#project/charles"],.academic-bio a[href="#project/charles"]:hover{color:#5e91b6}
+.academic-project[data-project="qualivision"] h3 a{color:#946ab0;font-family:var(--sans);font-weight:500}
+.academic-project[data-project="bibwrangler"] h3 a{color:#7b8f43;font-family:var(--sans);font-weight:500}
+.academic-project[data-project="charles"] h3 a{color:#5e91b6;font-family:var(--sans);font-weight:500}
+.academic-intro-layout>.availability-status .availability-color-mix{position:relative;display:block;isolation:isolate;flex:none;width:27px;height:25px;margin:0;background:transparent;box-shadow:none;border-radius:0}
+.availability-color-mix i{position:absolute;display:block;width:17px;height:17px;border-radius:50%;mix-blend-mode:multiply;background:#c5b3ec;left:0;top:0}
+.availability-color-mix i:nth-child(2){background:#9edbd3;left:10px;top:0}
+.availability-color-mix i:nth-child(3){background:#f2c1b0;left:5px;top:8px}
+@media(max-width:540px){.academic-intro-layout>.availability-status .availability-color-mix{width:22px;height:21px}.availability-color-mix i{width:14px;height:14px}.availability-color-mix i:nth-child(2){left:8px}.availability-color-mix i:nth-child(3){left:4px;top:7px}}
+
+/* Project names share the hue family of their matching color field. */
+:root{--system-qualivision:#7e6aa2;--system-bibwrangler:#7b8545;--system-charles:#567e97}
+.academic-bio a.advisor-link,.academic-bio a.advisor-link:hover,.academic-bio .research-emphasis,.academic-bio .research-emphasis:nth-of-type(2),.academic-bio .research-emphasis:nth-of-type(3){color:#228be6;font-weight:400;text-decoration:none}
+.academic-bio a[href="#project/qualivision"],.academic-bio a[href="#project/qualivision"]:hover{color:var(--system-qualivision)}
+.academic-bio a[href="#project/bibwrangler"],.academic-bio a[href="#project/bibwrangler"]:hover{color:var(--system-bibwrangler)}
+.academic-bio a[href="#project/charles"],.academic-bio a[href="#project/charles"]:hover{color:var(--system-charles)}
+.academic-project[data-project="qualivision"]{--project-ink:var(--system-qualivision)}
+.academic-project[data-project="bibwrangler"]{--project-ink:var(--system-bibwrangler)}
+.academic-project[data-project="charles"]{--project-ink:var(--system-charles)}
+.academic-project h3 a,.academic-project h3 a:hover,.academic-project[data-project="qualivision"] h3 a,.academic-project[data-project="bibwrangler"] h3 a,.academic-project[data-project="charles"] h3 a{color:var(--project-ink)}
+
+/* One UI typeface; project color carries the distinction. */
+.academic-bio a[href^="#project/"]{font-family:inherit;font-size:inherit;font-weight:inherit;letter-spacing:inherit}
+.academic-project h3 a{font-family:inherit;font-size:inherit;letter-spacing:inherit}
+body[data-page="personal"] .personal-intro h1,body[data-page="personal"] .archive-section h2,body[data-page="personal"] .folder-name,body[data-page="personal"] .trip-entry h3,.album-window .album-header h2{font-family:var(--sans)}
+
+/* Continuous neighboring hues: rose / lilac on the left, blue / mint on the right. */
+body{isolation:isolate;--ribbon-width:clamp(76px,calc((100vw - 1040px)/2 - 8px),180px);--ribbon-blur:22px;--ribbon-bleed:30px}
+body::before,body::after{content:"";position:fixed;top:calc(-1*var(--ribbon-bleed));bottom:calc(-1*var(--ribbon-bleed));width:calc(var(--ribbon-width) + var(--ribbon-bleed));z-index:-1;pointer-events:none;background-repeat:no-repeat;background-size:100% 165%;animation:continuous-color-drift 36s ease-in-out infinite alternate;filter:blur(var(--ribbon-blur));opacity:.9;mask-size:100% 100%;-webkit-mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
+body::before{left:calc(-1*var(--ribbon-bleed));background-image:linear-gradient(180deg,#e2b7cc 0%,#cfb6d9 42%,#c2b3dc 76%,#d9bdd8 100%);mask-image:linear-gradient(90deg,#000 0%,#000e 25%,#0007 65%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000e 25%,#0007 65%,transparent 100%)}
+body::after{right:calc(-1*var(--ribbon-bleed));background-image:linear-gradient(180deg,#acc7de 0%,#a8cdd7 35%,#a7cece 67%,#b3d5c6 100%);animation-delay:-18s;mask-image:linear-gradient(270deg,#000 0%,#000e 25%,#0007 65%,transparent 100%);-webkit-mask-image:linear-gradient(270deg,#000 0%,#000e 25%,#0007 65%,transparent 100%)}
+@keyframes continuous-color-drift{from{background-position:0 100%}to{background-position:0 0%}}
+.publication-image.publication-image-palette{padding:0;background:#fafbfe}
+.publication-image-palette img{object-fit:contain}
+@media(max-width:1100px){body{--ribbon-width:24px;--ribbon-blur:10px;--ribbon-bleed:12px}}
+@media(max-width:760px){body{--ribbon-width:14px}}
+@media(max-width:540px){body{--ribbon-width:8px;--ribbon-blur:6px;--ribbon-bleed:8px}}
+@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}}
+
+/* Personal section headings follow Some joys of my life. */
+body[data-page="personal"] .personal-intro h1,body[data-page="personal"] .archive-section h2,body[data-page="personal"] .joy-heading h2,.album-window .album-header h2{font-family:"Quicksand",var(--sans);font-weight:500;letter-spacing:0}
