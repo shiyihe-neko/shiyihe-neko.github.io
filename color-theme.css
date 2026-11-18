@@ -118,18 +118,18 @@ p{color:var(--ink)}
 .academic-project h3 a{font-family:inherit;font-size:inherit;letter-spacing:inherit}
 body[data-page="personal"] .personal-intro h1,body[data-page="personal"] .archive-section h2,body[data-page="personal"] .folder-name,body[data-page="personal"] .trip-entry h3,.album-window .album-header h2{font-family:var(--sans)}
 
-/* Continuous neighboring hues: rose / lilac on the left, blue / mint on the right. */
-body{isolation:isolate;--ribbon-width:clamp(76px,calc((100vw - 1040px)/2 - 8px),180px);--ribbon-blur:22px;--ribbon-bleed:30px}
-body::before,body::after{content:"";position:fixed;top:calc(-1*var(--ribbon-bleed));bottom:calc(-1*var(--ribbon-bleed));width:calc(var(--ribbon-width) + var(--ribbon-bleed));z-index:-1;pointer-events:none;background-repeat:no-repeat;background-size:100% 165%;animation:continuous-color-drift 36s ease-in-out infinite alternate;filter:blur(var(--ribbon-blur));opacity:.9;mask-size:100% 100%;-webkit-mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
-body::before{left:calc(-1*var(--ribbon-bleed));background-image:linear-gradient(180deg,#e2b7cc 0%,#cfb6d9 42%,#c2b3dc 76%,#d9bdd8 100%);mask-image:linear-gradient(90deg,#000 0%,#000e 25%,#0007 65%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000e 25%,#0007 65%,transparent 100%)}
-body::after{right:calc(-1*var(--ribbon-bleed));background-image:linear-gradient(180deg,#acc7de 0%,#a8cdd7 35%,#a7cece 67%,#b3d5c6 100%);animation-delay:-18s;mask-image:linear-gradient(270deg,#000 0%,#000e 25%,#0007 65%,transparent 100%);-webkit-mask-image:linear-gradient(270deg,#000 0%,#000e 25%,#0007 65%,transparent 100%)}
-@keyframes continuous-color-drift{from{background-position:0 100%}to{background-position:0 0%}}
+/* Sparse, soft-focus halos: most of each margin stays empty. */
+body{isolation:isolate;--halo-margin:clamp(76px,calc((100vw - 1040px)/2 - 16px),220px)}
+body::before,body::after{content:"";position:fixed;top:0;bottom:0;width:var(--halo-margin);z-index:-1;pointer-events:none;background-repeat:no-repeat;background-size:100% 100%;animation:sparse-halo-drift 48s ease-in-out infinite alternate;filter:none;opacity:1;mask:none;-webkit-mask:none}
+body::before{left:0;background-image:radial-gradient(ellipse 90px 104px at 13% 17%,rgba(181,143,219,0.475) 0%,rgba(181,143,219,0.362) 35%,rgba(181,143,219,0.112) 62%,transparent 83%),radial-gradient(ellipse 66px 77px at 4% 69%,rgba(139,211,193,0.438) 0%,rgba(139,211,193,0.3) 34%,rgba(139,211,193,0.075) 65%,transparent 84%),radial-gradient(ellipse 72px 81px at 57% 76%,rgba(233,175,150,0.375) 0%,rgba(233,175,150,0.225) 37%,transparent 80%)}
+body::after{right:0;animation-delay:-24s;background-image:radial-gradient(ellipse 88px 100px at 103% 30%,rgba(233,163,176,0.45) 0%,rgba(233,163,176,0.312) 36%,rgba(233,163,176,0.075) 65%,transparent 84%),radial-gradient(ellipse 63px 72px at 70% 34%,rgba(224,215,132,0.362) 0%,rgba(224,215,132,0.213) 38%,transparent 82%),radial-gradient(ellipse 77px 87px at 89% 81%,rgba(137,190,219,0.438) 0%,rgba(137,190,219,0.288) 36%,rgba(137,190,219,0.075) 65%,transparent 84%),radial-gradient(ellipse 63px 74px at 34% 75%,rgba(200,162,221,0.325) 0%,rgba(200,162,221,0.175) 38%,transparent 82%)}
+@keyframes sparse-halo-drift{from{transform:translateY(-5px)}to{transform:translateY(7px)}}
 .publication-image.publication-image-palette{padding:0;background:#fafbfe}
 .publication-image-palette img{object-fit:contain}
-@media(max-width:1100px){body{--ribbon-width:24px;--ribbon-blur:10px;--ribbon-bleed:12px}}
-@media(max-width:760px){body{--ribbon-width:14px}}
-@media(max-width:540px){body{--ribbon-width:8px;--ribbon-blur:6px;--ribbon-bleed:8px}}
-@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}}
+@media(max-width:1100px){body{--halo-margin:24px}body::before,body::after{opacity:.7}}
+@media(max-width:760px){body{--halo-margin:18px}}
+@media(max-width:540px){body{--halo-margin:12px}body::before,body::after{opacity:.55}}
+@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none;transform:none}}
 
 /* Personal section headings follow Some joys of my life. */
 body[data-page="personal"] .personal-intro h1,body[data-page="personal"] .archive-section h2,body[data-page="personal"] .joy-heading h2,.album-window .album-header h2{font-family:"Quicksand",var(--sans);font-weight:500;letter-spacing:0}
